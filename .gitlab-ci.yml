@@ -1,0 +1,15 @@
+build-job:
+  stage: build
+  image: docker:latest
+  script:
+    - docker build -t my-application /Users/cciobanu/Desktop/Devops-Tasks/Task4/my-aplication
+  artifacts:
+    paths:
+      - prod-service.jar
+
+test-job1:
+  stage: test
+  script:
+    - docker run my-application tests.sh
+  dependencies:
+    - build

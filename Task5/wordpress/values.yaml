@@ -1,0 +1,9 @@
+wordpress:
+  image:
+    repository: wordpress
+    tag: latest
+  siteUrl: "http://home.com"
+  db:
+    name: wordpress
+    user: admin
+    password: dbadmin
